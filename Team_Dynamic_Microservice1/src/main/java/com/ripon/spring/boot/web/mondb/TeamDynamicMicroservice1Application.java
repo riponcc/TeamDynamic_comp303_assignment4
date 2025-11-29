@@ -10,7 +10,7 @@ public class TeamDynamicMicroservice1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TeamDynamicMicroservice1Application.class, args);
-		 System.setProperty("spring.config.name", "Spring Web Flux Mongodb Ice Hockey using thymeleaf");
+		 System.setProperty("spring.config.name", "Team-Dynamic-Microservice1-Spring-Web-Flux-Mongodb-using-thymeleaf");
 			
 		 System.out.println("Spring Boot WebFlux Microservice1 has been satrted!!");
 	}
