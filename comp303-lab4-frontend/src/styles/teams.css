@@ -1,0 +1,8 @@
+.team-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 6px solid #ff8c42;
+  border-radius: 6px;
+}

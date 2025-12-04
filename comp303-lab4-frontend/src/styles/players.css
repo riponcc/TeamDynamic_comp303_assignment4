@@ -1,0 +1,8 @@
+.player-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 6px solid black;
+  border-radius: 6px;
+}

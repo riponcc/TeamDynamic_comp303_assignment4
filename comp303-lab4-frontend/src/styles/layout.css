@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fffaf5;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #ff8c42; /* Light Orange */
+  padding: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* Page Container */
+.container {
+  padding: 25px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  background-color: #ff8c42;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #cc0000;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: black;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Form Input */
+input,
+select {
+  padding: 10px;
+  width: 300px;
+  margin-bottom: 12px;
+}
+.vertical-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;       /* optional */
+  gap: 12px;          /* space between inputs */
+}
+
+.vertical-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #999;
+  font-size: 15px;
+}
+
+.vertical-form button {
+  margin-top: 10px;
+  padding: 10px;
+}
