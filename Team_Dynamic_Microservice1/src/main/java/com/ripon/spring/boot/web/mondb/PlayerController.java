@@ -77,7 +77,7 @@ public class PlayerController {
     public Mono<String> viewPlayer(@PathVariable int id, Model model) {
         return service.getPlayer(id)
                 .doOnNext(p -> model.addAttribute("player", p))
-                .thenReturn("show_player");
+                .thenReturn("show_player_info");
     }
 }
 
