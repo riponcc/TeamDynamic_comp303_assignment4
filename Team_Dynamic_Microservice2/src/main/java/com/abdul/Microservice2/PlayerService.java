@@ -11,7 +11,7 @@ public class PlayerService {
     private final WebClient webClient;
 
     public PlayerService(WebClient.Builder webClientBuilder) {
-    		this.webClient = webClientBuilder.baseUrl("http://Team-Dynamic-Microservice1-Spring-Web-Flux-Mongodb-using-thymeleaf").build();
+    		this.webClient = webClientBuilder.baseUrl("http://Team-Dynamic-Microservice1").build();
     	}
 
     public Flux<Player> getPlayers() {

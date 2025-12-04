@@ -11,7 +11,7 @@ public class TeamService {
     private final WebClient webClient;
 
     public TeamService(WebClient.Builder webClientBuilder) {
-    		this.webClient = webClientBuilder.baseUrl("http://Team-Dynamic-Microservice1-Spring-Web-Flux-Mongodb-using-thymeleaf").build();
+    		this.webClient = webClientBuilder.baseUrl("http://Team-Dynamic-Microservice1").build();
     }
 
     public Flux<Team> getTeams() {
@@ -32,5 +32,9 @@ public class TeamService {
 
     public Mono<Void> deleteTeam(int id) {
         return webClient.delete().uri("/api/teams/{id}", id).retrieve().bodyToMono(Void.class);
+    }
+    
+    public Flux<Player> getPlayersByTeam(int id) {
+        return webClient.get().uri("/api/teams/{id}/player", id).retrieve().bodyToFlux(Player.class);
     }
 }

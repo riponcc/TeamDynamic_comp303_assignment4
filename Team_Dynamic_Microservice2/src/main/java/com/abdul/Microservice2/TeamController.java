@@ -32,7 +32,7 @@ public class TeamController {
         return teamService.getTeam(id);
     }
 
-    @PostMapping
+    @PostMapping ("/add")
     public Mono<Team> addTeam(@RequestBody Team team) {
         return teamService.addTeam(team);
     }
@@ -45,5 +45,10 @@ public class TeamController {
     @DeleteMapping("/{id}")
     public Mono<Void> deleteTeam(@PathVariable int id) {
         return teamService.deleteTeam(id);
+    }
+    
+    @GetMapping("/{id}/player")
+    public Flux<Player> getPlayersByTeam(@PathVariable int id) {
+        return teamService.getPlayersByTeam(id);
     }
 }

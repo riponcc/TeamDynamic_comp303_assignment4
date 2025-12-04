@@ -9,9 +9,12 @@ import reactor.core.publisher.Mono;
 public class TeamRestController {
 
     private final TeamService teamService;
+    private final PlayerService playerService;
+    
 
-    public TeamRestController(TeamService teamService) {
+    public TeamRestController(TeamService teamService, PlayerService playerService) {
         this.teamService = teamService;
+        this.playerService=playerService;
     }
 
     @GetMapping
@@ -22,6 +25,11 @@ public class TeamRestController {
     @GetMapping("/{id}")
     public Mono<Team> getTeam(@PathVariable int id) {
         return teamService.getTeam(id);
+    }
+    
+    @GetMapping("/{id}/player")
+    public Flux<Player> getPlayersByTeam(@PathVariable int id) {
+        return playerService.getPlayersByTeam(id);
     }
 
     @PostMapping
@@ -39,4 +47,6 @@ public class TeamRestController {
     public Mono<Void> deleteTeam(@PathVariable int id) {
         return teamService.deleteTeam(id);
     }
+    
+   
 }

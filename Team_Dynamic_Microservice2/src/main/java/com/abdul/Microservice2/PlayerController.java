@@ -31,7 +31,7 @@ public class PlayerController {
         return playerService.getPlayer(id);
     }
 
-    @PostMapping
+    @PostMapping ("/add")
     public Mono<Player> addPlayer(@RequestBody Player player) {
         return playerService.addPlayer(player);
     }
