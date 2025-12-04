@@ -1,12 +1,12 @@
-
 // export default AddPlayer;
 import React, { useState } from "react";
 import api from "../../api";
 import "../../styles/layout.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function AddPlayer() {
   const navigate = useNavigate();
+  const { teamId } = useParams();
   const [player, setPlayer] = useState({
     playerId: "",
     firstName: "",
@@ -14,7 +14,7 @@ function AddPlayer() {
     position: "",
     jerseyNumber: "",
     age: "",
-    teamId: "",
+    teamId: teamId || "",
   });
 
   const handleChange = (e) =>
@@ -32,7 +32,7 @@ function AddPlayer() {
       <form onSubmit={handleSubmit} className="vertical-form">
         <input
           name="playerId"
-          type="number" 
+          type="number"
           placeholder="Player ID"
           onChange={handleChange}
           required
@@ -73,6 +73,7 @@ function AddPlayer() {
           name="teamId"
           type="number"
           placeholder="Team ID"
+          value={player.teamId}
           onChange={handleChange}
           required
         />

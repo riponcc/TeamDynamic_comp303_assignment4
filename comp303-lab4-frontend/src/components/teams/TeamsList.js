@@ -1,5 +1,4 @@
-
-// export default TeamsList;
+// TeamsList: Lists all teams in a vertical card grid with actions.
 import React, { useEffect, useState } from "react";
 import api from "../../api";
 import "../../styles/layout.css";
@@ -34,83 +33,84 @@ function TeamsList() {
 
   return (
     <div className="container mt-4">
-
       {/* Header */}
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h2 className="fw-bold">
-          <PeopleFill className="text-primary me-2" size={30} />
+          <PeopleFill className="me-2" size={30} />
           Team Management
         </h2>
 
-        <Link to="/teams/add" className="btn btn-success shadow-sm">
+        <Link to="/teams/add" className="btn btn-primary shadow-sm">
           <PlusCircle className="me-1" />
           Add Team
         </Link>
       </div>
 
-      {/* Table */}
-      <table className="table table-hover table-bordered shadow-sm">
-        <thead className="table-dark">
-          <tr>
-            <th>Team ID</th>
-            <th>Team Name</th>
-            <th>City</th>
-            <th>Founded</th>
-            <th>Coach</th>
-            <th style={{ width: "350px" }}>Actions</th>
-          </tr>
-        </thead>
+      {/* Teams Grid */}
+      {teams.length > 0 ? (
+        <div className="teams-grid">
+          {teams.map((team) => (
+            <div key={team.teamId} className="team-card">
+              <div>
+                <div className="team-card-header">
+                  <div className="team-card-title">{team.teamName}</div>
+                  <span className="team-card-meta">ID: {team.teamId}</span>
+                </div>
 
-        <tbody>
-          {teams.length > 0 ? (
-            teams.map((team) => (
-              <tr key={team.teamId}>
-                <td>{team.teamId}</td>
-                <td className="fw-semibold">{team.teamName}</td>
-                <td>{team.teamCity}</td>
-                <td>{team.teamFounded}</td>
-                <td>{team.coachName}</td>
+                <div className="team-card-meta">
+                  <div>
+                    <strong>City:</strong> {team.teamCity}
+                  </div>
+                  <div>
+                    <strong>Founded:</strong> {team.teamFounded}
+                  </div>
+                  <div>
+                    <strong>Coach:</strong> {team.coachName}
+                  </div>
+                </div>
+              </div>
 
-                <td>
-                  {/* View Players Button */}
-                  <Link
-                    to={`/teams/${team.teamId}`}
-                    className="btn btn-info btn-sm me-2"
-                  >
-                    <EyeFill className="me-1" />
-                    Players
-                  </Link>
+              <div className="team-card-actions">
+                <Link
+                  to={`/teams/${team.teamId}`}
+                  className="btn btn-info btn-sm"
+                >
+                  <EyeFill className="me-1" />
+                  View
+                </Link>
 
-                  {/* Edit */}
-                  <Link
-                    to={`/teams/edit/${team.teamId}`}
-                    className="btn btn-warning btn-sm me-2"
-                  >
-                    <PencilSquare className="me-1" />
-                    Edit
-                  </Link>
+                <Link
+                  to={`/teams/${team.teamId}/players`}
+                  className="btn btn-secondary btn-sm"
+                >
+                  Players
+                </Link>
 
-                  {/* Delete */}
-                  <button
-                    className="btn btn-danger btn-sm"
-                    onClick={() => deleteTeam(team.teamId)}
-                  >
-                    <TrashFill className="me-1" />
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="6" className="text-center py-3">
-                <TrashFill className="text-danger me-2" />
-                No teams found.
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+                <Link
+                  to={`/teams/edit/${team.teamId}`}
+                  className="btn btn-warning btn-sm"
+                >
+                  <PencilSquare className="me-1" />
+                  Edit
+                </Link>
+
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => deleteTeam(team.teamId)}
+                >
+                  <TrashFill className="me-1" />
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-3">
+          <TrashFill className="text-danger me-2" />
+          No teams found.
+        </div>
+      )}
     </div>
   );
 }
