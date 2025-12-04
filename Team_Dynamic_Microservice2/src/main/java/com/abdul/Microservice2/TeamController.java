@@ -14,6 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/*
+ * Author: Md Ripon & Abdulrahman Hamid & Farouk Oladega
+ * Assignment 4: Developing Spring Boot Micro services with MongoDB and React Integration
+ * Microservice 2: REST API Gateway for React Client (Spring Boot REST + MongoDB + WebFlux + REST Client) 
+ * Rest Controller for Microservice 2
+ * Submission Date: Dec 4, 2025
+ */
+
+//this a rest controller identified by the annotation below 
 @RestController
 @RequestMapping("/teams")
 @CrossOrigin(origins = "http://localhost:3000") // for react app localhost

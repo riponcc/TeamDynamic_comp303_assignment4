@@ -1,5 +1,13 @@
 package com.abdul.Microservice2;
 
+/*
+ * Author: Md Ripon & Abdulrahman Hamid & Farouk Oladega
+ * Assignment 4: Developing Spring Boot Micro services with MongoDB and React Integration
+ * Microservice 2: REST API Gateway for React Client (Spring Boot REST + MongoDB + WebFlux + REST Client) 
+ * Entity class for team
+ * Submission Date: Dec 4, 2025
+ */
+
 public class Team {
     private int teamId;
     private String teamName;

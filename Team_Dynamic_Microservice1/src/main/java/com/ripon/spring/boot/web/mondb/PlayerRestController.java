@@ -3,6 +3,13 @@ package com.ripon.spring.boot.web.mondb;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+/*
+ * Author: Md Ripon & Abdulrahman Hamid & Farouk Oladega
+ * Assignment 4: Developing Spring Boot Micro services with MongoDB and React Integration
+ * Microservice 1: Reactive Ice Hockey Management Service (Spring Boot + WebFlux + MongoDB + Thymeleaf)
+ * Rest Controller For microsrivece2 to get the information
+ * Submission Date: Dec 4, 2025
+ */
 
 @RestController
 @RequestMapping("/api/players")

@@ -1,6 +1,12 @@
 package com.ripon.spring.boot.web.mondb;
 
 import org.springframework.data.annotation.Id;
+/*
+ * Author: Md Ripon & Abdulrahman Hamid & Farouk Oladega
+ * Assignment 4: Developing Spring Boot Micro services with MongoDB and React Integration
+ * Entity class Player for Microervice 1
+ * Submission Date: Dec 4, 2025
+ */
 
 public class Player {
 	
